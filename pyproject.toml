@@ -1,0 +1,13 @@
+[tool.qgis_plugin_dev_tools]
+plugin_package_name = "alaQgisPlugin"
+runtime_requires = [
+    "requests"
+]
+auto_add_recursive_runtime_dependencies = true
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true

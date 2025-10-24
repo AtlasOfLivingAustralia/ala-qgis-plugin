@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/alaQgisPlugin" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
