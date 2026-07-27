@@ -6,3 +6,4 @@ codespell
 sphinx
 myst-parser
 sphinx-design
+renku-sphinx-theme

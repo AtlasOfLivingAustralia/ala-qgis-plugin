@@ -93,15 +93,10 @@ html_theme = "renku"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-# html_theme_options = {
-#     "navbar_align": "content",
-#     "github_url": "https://github.com/AtlasOfLivingAustralia/quail",
-#     "secondary_sidebar_items": ["page-toc"],
-#     "logo": {
-#     	"image_light": "_static/logo/logo.png", # didn't have dir before
-#         "image_dark": "_static/logo/logo.png",
-#     },
-# }
+html_theme_options = {
+    # "body_max_width": None,
+    "body_min_width": "1200px",
+}
 
 # was image_light
 html_sidebars = {"index": [], "search": []}  # , "**": ["sidebar-nav-bs"]}
@@ -117,9 +112,9 @@ html_logo = "_static/logo/logo.png"
 
 html_favicon = '_static/logo/favicon.ico'
 
-html_css_files = ['css/extra.css','css/style.css']
+# html_css_files = ['css/extra.css','css/style.css']
 
-html_style = 'css/style.css'
+# html_style = 'css/style.css'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -186,52 +181,6 @@ html_style = 'css/style.css'
 # Output file base name for HTML help builder.
 htmlhelp_basename = "TemplateClassdoc"
 
-
-# -- Options for LaTeX output --------------------------------------------------
-
-# The paper size ('letter' or 'a4').
-# latex_paper_size = 'letter'
-
-# The font size ('10pt', '11pt' or '12pt').
-# latex_font_size = '10pt'
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
-# latex_documents = [
-#     (
-#         "index",
-#         "Quail.tex",
-#         "Quail Documentation",
-#         "Atlas of Living Australia",
-#         "manual",
-#     ),
-# ]
-
-# The name of an image file (relative to this directory) to place at the top of
-# the title page.
-# latex_logo = None
-
-# For "manual" documents, if this is true, then toplevel headings are parts,
-# not chapters.
-# latex_use_parts = False
-
-# If true, show page references after internal links.
-# latex_show_pagerefs = False
-
-# If true, show URL addresses after external links.
-# latex_show_urls = False
-
-# Additional stuff for the LaTeX preamble.
-# latex_preamble = ''
-
-# Documents to append as an appendix to all manuals.
-# latex_appendices = []
-
-# If false, no module index is generated.
-# latex_domain_indices = True
-
-
-# -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).

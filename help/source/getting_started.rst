@@ -210,4 +210,4 @@ occurrences, you will see a new layer titled "data" with all your other spatial 
 
 |
 
-[1] https://threatenedspecies.bionet.nsw.gov.au/profile?id=10562
+[1] https://birdlife.org.au/bird-profiles/powerful-owl/

@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 
+import json
 import galah
 import geopandas as gpd
 import pandas as pd
@@ -911,6 +912,9 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
             selected_shapes = sc.checkedItems()
             if len(selected_shapes) > 1 and "None selected" in selected_shapes:
                 selected_shapes.remove("None selected")
+            crs = json.loads(nl.crs().toJsonString())["name"]
+            if crs not in ["WGS 84"]:
+                return f"The Coordinate Reference System is {crs}, and should be WGS 84.  Please convert the CRS using QGIS."
             features = list(nl.getFeatures())
             selected_features = [f for f in features if f.attributeMap()[attribute] in selected_shapes]
             geometries = [f.geometry() for f in selected_features]
@@ -1418,7 +1422,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # add any spatial queries
         spatial = self.parse_spatial()
-
+        
         # set fields
         fields = self.set_data_fields()
 
@@ -1429,6 +1433,11 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # get all potential filters
         taxonomy, filters, spatial, doi, fields, use_data_profile = self.prepare_query(counts=True)
+
+        # check to see if crs is valid
+        if isinstance(spatial,str):
+            self.show_info_messagebox(text=spatial)
+            return None
 
         # draw bounding boxes around shapes, as a lot of shapes are too complicated to
         # pass in current iteration of galah
@@ -1504,7 +1513,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # get total number of features
         total_features = 0
-        for l in layers:
+        for l in layers_to_compile:
             total_features += l.featureCount()
 
         # initialise dictionary to put data into for speedup
@@ -1547,6 +1556,11 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # check to see if user provided email and reason
         if taxonomy in ["provide_email", "provide_reason", "provide_email_gbif"]:
+            return None
+
+        # check to see if crs is valid
+        if isinstance(spatial,str):
+            self.show_info_messagebox(text=spatial)
             return None
 
         # make bounding boxes

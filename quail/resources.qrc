@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/plugins/Quail" >
         <file>icon.png</file>
+        <file>ALA_Logo_Inline_REV-RGB.png</file>
     </qresource>
 </RCC>
