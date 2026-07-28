@@ -8,7 +8,7 @@ Authors
         Author, maintainer
     **Dax Kellie** : 
         Author
-    **Shandiya Balusabramaniam** : 
+    **Shandiya Balasubramaniam** : 
         Author
     **Juliet Seers** : 
         Author

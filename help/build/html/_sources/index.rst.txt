@@ -18,15 +18,15 @@
 to biodiversity data hosted by the ‘living atlases’.  The ‘living atlases’ are a set of organisations that share a common 
 codebase, and act as nodes of the Global Biodiversity Information Facility (`GBIF <https://www.gbif.org/>`_).  These 
 organisations collate and store observations of individual life forms, using the `‘Darwin Core’ <https://dwc.tdwg.org/>`_ 
-data standard. The Quail was built and is maintained by Amanda Buyan, a member of the 
+data standard. Quail was built and is maintained by Amanda Buyan, a member of the 
 `Science & Decision Support Team <https://labs.ala.org.au/>`_ at the `Atlas of Living Australia (ALA) <https://www.ala.org.au/>`_.
 
-The Quail enables users to locate and download species occurrence records (observations, specimens, 
+Quail enables users to locate and download species occurrence records (observations, specimens, 
 eDNA records, etc.), and to restrict their queries to particular taxa or locations. Users can also restrict their queries 
 based on threatened and sensitive species lists, or restrict their results to occurrences that meet particular data-quality 
-criteria. This data is then read into QGIS as a vector layer.
+criteria. These data are then read into QGIS as a vector layer.
 
-If you have any comments, questions or suggestions, please `contact us <mailto:support@ala.org.au>`_.
+If you have any comments, questions, or suggestions, please `contact us <mailto:support@ala.org.au>`_.
 
 
 .. toctree::

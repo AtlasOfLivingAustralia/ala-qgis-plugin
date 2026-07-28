@@ -96,14 +96,13 @@
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>You will need to register your email address at the atlas you
-want to download data for, otherwise you will get no data!</p>
+<p>You will need to register your email address at the living atlas you
+want to download data from, otherwise you will get no data!</p>
 </div>
 <p>Now that you have successfully installed Quail, we’ll provide a quick
 introduction on building a query to get data. If you’re looking for a
 discussion on more specialised topics, the Deep Dives tab collates all
-vignettes on specialised topics. This tutorial serves as an initial
-method to acquaint you with the plugin.</p>
+vignettes on specialised topics. This tutorial serves as a quick start quide to get you acquainted with the plugin.</p>
 <p>We will work through the following example (this is specific to the
 Australian atlas, but can be adapted for others):</p>
 <div class="admonition-query admonition">
@@ -113,9 +112,8 @@ Government Area of Shoalhaven in the year 2025?”</p>
 </div>
 <section id="taxonomy">
 <h2>Taxonomy<a class="headerlink" href="#taxonomy" title="Link to this heading"></a></h2>
-<p>Here you can specify taxonomic names for the plugin to search on.  Since
-we are going to be searching for birds in the class <em>Aves</em>, we will enter
-the name into the text box like so:</p>
+<p>Here you can specify taxonomic names for the plugin to search.  Since
+we are going to be searching for birds in the class <em>Aves</em>, we can type this into the text box like so:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Aves_Text_box.png"><img alt="_images/Aves_Text_box.png" height="486" src="_images/Aves_Text_box.png" width="536" />
 </a>
@@ -125,8 +123,8 @@ the name into the text box like so:</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The “Upload Species List” functionality is intended more for larger lists and cases
-where specifying higher order taxonomy helps disambiguate species.  For a more in-depth
+<p>The “Upload Species List” functionality is intended for larger lists and cases
+where specifying higher order taxonomy helps disambiguate species. For a more in-depth
 explanation of how to do this, see <a class="reference external" href="user_guide/taxonomy_advanced.html">Advanced Taxonomy</a>.</p>
 </div>
 <div class="admonition-part-of-query-solved admonition">
@@ -136,8 +134,7 @@ explanation of how to do this, see <a class="reference external" href="user_guid
 </section>
 <section id="date">
 <h2>Date<a class="headerlink" href="#date" title="Link to this heading"></a></h2>
-<p>Now we can specify the date range that we want for our query.  Go to
-the “Date” tab, where you will see two calendars:</p>
+<p>Next we can specify the date range relevant to our query. On the “Date” tab, you will see two calendars:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Calendar_1.png"><img alt="_images/Calendar_1.png" height="488" src="_images/Calendar_1.png" width="535" />
 </a>
@@ -145,8 +142,7 @@ the “Date” tab, where you will see two calendars:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>To choose the year 2025, we will have to select the 1st of January 2025
-for the start date, and the 31st of December 2025 as our end date, like so:</p>
+<p>To choose the year 2025, we have to select 1 January 2025 for the start date and 31 December 2025 as the end date, like so:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Calendar_2.png"><img alt="_images/Calendar_2.png" height="488" src="_images/Calendar_2.png" width="536" />
 </a>
@@ -162,10 +158,7 @@ Local Government Area of Shoalhaven <strong>in the year 2025</strong>?”</p>
 </section>
 <section id="filtering-by-spatial-layers">
 <h2>Filtering By Spatial Layers<a class="headerlink" href="#filtering-by-spatial-layers" title="Link to this heading"></a></h2>
-<p>Another functionality of the Quail is the
-ability to filter using spatial objects uploaded to QGIS.  To
-use them as filters, go to the “Spatial” tab and press “Update
-Layers in Plugin.”</p>
+<p>Quail lets users filter using spatial objects uploaded to QGIS. You can do this by selecting the “Spatial” tab and clicking “Update Layers in Plugin.”</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Spatial_1.png"><img alt="_images/Spatial_1.png" height="486" src="_images/Spatial_1.png" width="536" />
 </a>
@@ -173,10 +166,7 @@ Layers in Plugin.”</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Once you do this, a window will pop up, showing all the possible
-layers you can use to filter, as well as which column to use to
-select the layer.  In this example, we will use <code class="docutils literal notranslate"><span class="pre">LGA_NAME25</span></code> to
-load the names of all the LGAs into the plugin.</p>
+<p>Once this is done, a pop up appears that shows all the available layers and fields that can be used to select the later. In this example, we will use LGA_NAME25 to load the names of all the LGAs into the plugin.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Spatial_2.png"><img alt="_images/Spatial_2.png" height="486" src="_images/Spatial_2.png" width="535" />
 </a>
@@ -198,8 +188,7 @@ load the names of all the LGAs into the plugin.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Now that all the layer attributes have been loaded into the plugin,
-it is time to scroll down the LGA names until you find “Shoalhaven”.</p>
+<p>Now that all the layer attributes have been loaded into the plugin, select “Shoalhaven” from the names of the LGAs.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Spatial_5.png"><img alt="_images/Spatial_5.png" height="488" src="_images/Spatial_5.png" width="537" />
 </a>
@@ -221,17 +210,9 @@ it is time to scroll down the LGA names until you find “Shoalhaven”.</p>
 <a class="reference external" href="mailto:support&#37;&#52;&#48;ala&#46;org&#46;au">Contact us</a> if you would like
 authoritative lists added for your atlas.</p>
 </div>
-<p>The Atlas of Living Australia (ALA) maintains a number of important, authoritative species lists which determine the
-status of certain taxa for states/territories, as well as for the whole of Australia.  It is important to keep these
-lists up to date so we can not only inform our users of the threatened, migratory or non-native status of a particular
-taxa, we can obfuscate records if these records contain taxon that are designated “sensitive” by a state/territory.
-An example of a sensitive species is the Powerful Owl (<em>Ninox (Rhabdoglaux) strenua</em>), which has seen habitat loss due
-to residential and agricultural development[1].</p>
-<p>When you click on an authoritative list tick box, your query will return only results that are on that particular list.
-If you are interested in multiple lists, tick the relevant boxes and your resulting query will include species on all
-of those lists.</p>
-<p>Since the LGA of Shoalhaven is in New South Wales, we will need to check the box labelled
-New South Wales uder the “Threatened” list.</p>
+<p>The Atlas of Living Australia (ALA) maintains a number of authoritative lists which document the status of certain taxa at the federal and state/territory levels. These lists allow us to inform users of threatened, migratory, or non-native status of taxa, as well as obfuscate records for taxa that are considered “sensitive”. An example of a sensitive species is the Powerful Owl (<em>Ninox strenua</em>), which has seen habitat loss due to residential and agricultural development[1].</p>
+<p>When you click on an authoritative list tick box, your query will return only results that are on that particular list. If you are interested in multiple lists, tick the relevant boxes and your resulting query will include species on all those lists.</p>
+<p>Since the LGA of Shoalhaven is in New South Wales, we will need to check the box labelled New South Wales under the “Threatened” list.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/AL_1.png"><img alt="_images/AL_1.png" height="487" src="_images/AL_1.png" width="535" />
 </a>
@@ -247,14 +228,9 @@ the Local Government Area of Shoalhaven in the year 2025</strong>?”</p>
 </section>
 <section id="other-important-filters-to-consider">
 <h2>Other important filters to consider<a class="headerlink" href="#other-important-filters-to-consider" title="Link to this heading"></a></h2>
-<p>There are some filters which are of interest and/or important, but did
-not fit into the previous four tabs.  These are: the basis of record,
-whether or not a species is present or absent, and applying data profiles
-to your data.  If you want more information, you can hover over X and some
-information will pop up.</p>
-<p>We will be ticking the “Present” button to ensure we only
-get presences.  It is important to note that there is vastly more presence
-data than absence data, so this step may not be required.</p>
+<p>The “Other” tab contains options for additional filters, such as: basis of record, presence/absence of a species, and data profiles. Hovering your mouse over the <cite>i</cite> button will bring up additional information on these filters.</p>
+<p>In this example, we’ll select the “Present” button to ensure we only
+get records of presences.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Other_1.png"><img alt="_images/Other_1.png" height="488" src="_images/Other_1.png" width="537" />
 </a>
@@ -274,10 +250,10 @@ the Local Government Area of Shoalhaven in the year 2025</strong>?”</p>
 <section id="required-fields">
 <h3>Required Fields<a class="headerlink" href="#required-fields" title="Link to this heading"></a></h3>
 <p>There are two required fields when downloading either a list of species
-or species’ locations: an email, as well as a reason.</p>
+or species’ locations: an email address and a reason for downloading these data.</p>
 <ul class="simple">
 <li><p><strong>Email</strong>:  This should be an email of yours that you have registered with the relevant Living Atlas.</p></li>
-<li><p><strong>Reason</strong>: This is to specify why you are downloading data from the specified Living Atlas.  Examples are “environmental assessment” and “specied modelling”.  These reasons will change with each Living Atlas.</p></li>
+<li><p><strong>Reason</strong>: This is to specify why you are downloading data from the chosen Living Atlas.  Examples are “environmental assessment” and “species modelling”.  These reasons will change with each Living Atlas.</p></li>
 </ul>
 <p>This is how it should look:</p>
 <figure class="align-center">
@@ -290,26 +266,18 @@ or species’ locations: an email, as well as a reason.</p>
 </section>
 <section id="optional-but-recommended-checking-number-of-occurrences">
 <h3>Optional But Recommended: Checking Number of Occurrences<a class="headerlink" href="#optional-but-recommended-checking-number-of-occurrences" title="Link to this heading"></a></h3>
-<p>After you have created a query, it is time to start downloading data!  Before getting
-the occurrence records, it is often a good idea to check the number of occurrences your
-query will be downloading.  This will help you determine how long the query will take
-(1mil records will take longer than 1000 records, for example).  This is also a good
-sanity check before running a query, so you can amend it before clicking the “Download
-Occurrences” button.</p>
-<p>To do this, click the “Check Number of Occurrences” button.  A box will pop up like this
-with the number of counts:</p>
+<p>After you have created a query, it is time to start downloading data!  Before downloading the occurrence records, it is often a good idea to check the number of occurrences your in your download. This will help you understand how long the download will take (e.g. 1 million records will take longer than 1,000 records).  This is also a good way to get a sense of whether you’re about to download a reasonable number of records, given the parameters of your query.</p>
+<p>To do this, click the “Check Number of Occurrences” button.  A box will pop up like this with the number of counts:</p>
 <figure class="align-center">
 <img alt="_images/Counts_1.png" src="_images/Counts_1.png" />
 </figure>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>We know now that we are expecting about 4000 records.  Now we can download the occurrences.</p>
 </section>
 <section id="download-occurrences">
 <h3>Download Occurrences<a class="headerlink" href="#download-occurrences" title="Link to this heading"></a></h3>
-<p>Now it is finally time to download the occurrence records from the ALA.  To do this, simply
-click the “Download Occurrences” button in the lower left-hand corner:</p>
+<p>Now that we know we’re expecting about 4,000 records, we can download the data. To do this, click the “Download Occurrences” button in the lower left corner:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Occurrences_1.png"><img alt="_images/Occurrences_1.png" height="486" src="_images/Occurrences_1.png" width="537" />
 </a>
@@ -317,9 +285,8 @@ click the “Download Occurrences” button in the lower left-hand corner:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>After a bit, navigate to the main QGIS window.  Once the plugin is done downloading the
-occurrences, you will see a new layer titled “data” with all your other spatial layers.
-Your data should look like this below:</p>
+<p>Now navigate back to the main QGIS window. Once the plugin has downloaded the
+occurrences, you will see a new layer titled “data” with all your other spatial layers. Your data should look like this:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Occurrences_2.png"><img alt="_images/Occurrences_2.png" height="647" src="_images/Occurrences_2.png" width="1028" />
 </a>
@@ -330,7 +297,7 @@ Your data should look like this below:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>[1] <a class="reference external" href="https://threatenedspecies.bionet.nsw.gov.au/profile?id=10562">https://threatenedspecies.bionet.nsw.gov.au/profile?id=10562</a></p>
+<p>[1] <a class="reference external" href="https://birdlife.org.au/bird-profiles/powerful-owl/">https://birdlife.org.au/bird-profiles/powerful-owl/</a></p>
 </section>
 </section>
 </section>

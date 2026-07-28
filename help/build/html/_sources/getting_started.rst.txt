@@ -3,14 +3,13 @@ Getting Started
 
 .. important:: 
 
-    You will need to register your email address at the atlas you 
-    want to download data for, otherwise you will get no data!
+    You will need to register your email address at the living atlas you 
+    want to download data from, otherwise you will get no data!
 
 Now that you have successfully installed Quail, we’ll provide a quick 
 introduction on building a query to get data. If you’re looking for a 
 discussion on more specialised topics, the Deep Dives tab collates all 
-vignettes on specialised topics. This tutorial serves as an initial 
-method to acquaint you with the plugin.
+vignettes on specialised topics. This tutorial serves as a quick start quide to get you acquainted with the plugin.
 
 We will work through the following example (this is specific to the 
 Australian atlas, but can be adapted for others):
@@ -23,9 +22,8 @@ Australian atlas, but can be adapted for others):
 Taxonomy
 -----------
 
-Here you can specify taxonomic names for the plugin to search on.  Since 
-we are going to be searching for birds in the class *Aves*, we will enter 
-the name into the text box like so:
+Here you can specify taxonomic names for the plugin to search.  Since 
+we are going to be searching for birds in the class *Aves*, we can type this into the text box like so:
 
 .. figure:: images/Aves_Text_box.png
     :scale: 65
@@ -35,8 +33,8 @@ the name into the text box like so:
 
 .. tip::
  
-    The "Upload Species List" functionality is intended more for larger lists and cases 
-    where specifying higher order taxonomy helps disambiguate species.  For a more in-depth 
+    The "Upload Species List" functionality is intended for larger lists and cases 
+    where specifying higher order taxonomy helps disambiguate species. For a more in-depth 
     explanation of how to do this, see `Advanced Taxonomy <user_guide/taxonomy_advanced.html>`_.
 
 .. admonition:: Part of query solved
@@ -46,8 +44,7 @@ the name into the text box like so:
 Date
 -----------
 
-Now we can specify the date range that we want for our query.  Go to 
-the "Date" tab, where you will see two calendars:
+Next we can specify the date range relevant to our query. On the "Date" tab, you will see two calendars:
 
 .. figure:: images/Calendar_1.png
     :scale: 65
@@ -55,8 +52,7 @@ the "Date" tab, where you will see two calendars:
 
 |
 
-To choose the year 2025, we will have to select the 1st of January 2025 
-for the start date, and the 31st of December 2025 as our end date, like so:
+To choose the year 2025, we have to select 1 January 2025 for the start date and 31 December 2025 as the end date, like so:
 
 .. figure:: images/Calendar_2.png
     :scale: 65
@@ -72,10 +68,7 @@ for the start date, and the 31st of December 2025 as our end date, like so:
 Filtering By Spatial Layers
 ---------------------------------
 
-Another functionality of the Quail is the 
-ability to filter using spatial objects uploaded to QGIS.  To 
-use them as filters, go to the "Spatial" tab and press "Update 
-Layers in Plugin."
+Quail lets users filter using spatial objects uploaded to QGIS. You can do this by selecting the "Spatial" tab and clicking "Update Layers in Plugin."
 
 .. figure:: images/Spatial_1.png
     :scale: 65
@@ -83,10 +76,7 @@ Layers in Plugin."
 
 |
 
-Once you do this, a window will pop up, showing all the possible 
-layers you can use to filter, as well as which column to use to 
-select the layer.  In this example, we will use ``LGA_NAME25`` to 
-load the names of all the LGAs into the plugin.
+Once this is done, a pop up appears that shows all the available layers and fields that can be used to select the later. In this example, we will use LGA_NAME25 to load the names of all the LGAs into the plugin.
 
 .. figure:: images/Spatial_2.png
     :scale: 65
@@ -106,8 +96,7 @@ load the names of all the LGAs into the plugin.
 
 |
 
-Now that all the layer attributes have been loaded into the plugin, 
-it is time to scroll down the LGA names until you find "Shoalhaven".
+Now that all the layer attributes have been loaded into the plugin, select "Shoalhaven" from the names of the LGAs. 
 
 .. figure:: images/Spatial_5.png
     :scale: 65
@@ -129,19 +118,11 @@ Filtering by Authoritative Lists
     `Contact us <mailto:support@ala.org.au>`_ if you would like 
     authoritative lists added for your atlas.
 
-The Atlas of Living Australia (ALA) maintains a number of important, authoritative species lists which determine the 
-status of certain taxa for states/territories, as well as for the whole of Australia.  It is important to keep these 
-lists up to date so we can not only inform our users of the threatened, migratory or non-native status of a particular 
-taxa, we can obfuscate records if these records contain taxon that are designated "sensitive" by a state/territory.  
-An example of a sensitive species is the Powerful Owl (*Ninox (Rhabdoglaux) strenua*), which has seen habitat loss due 
-to residential and agricultural development[1].
+The Atlas of Living Australia (ALA) maintains a number of authoritative lists which document the status of certain taxa at the federal and state/territory levels. These lists allow us to inform users of threatened, migratory, or non-native status of taxa, as well as obfuscate records for taxa that are considered "sensitive". An example of a sensitive species is the Powerful Owl (*Ninox strenua*), which has seen habitat loss due to residential and agricultural development[1].
 
-When you click on an authoritative list tick box, your query will return only results that are on that particular list.  
-If you are interested in multiple lists, tick the relevant boxes and your resulting query will include species on all 
-of those lists.
+When you click on an authoritative list tick box, your query will return only results that are on that particular list. If you are interested in multiple lists, tick the relevant boxes and your resulting query will include species on all those lists.
 
-Since the LGA of Shoalhaven is in New South Wales, we will need to check the box labelled 
-New South Wales uder the "Threatened" list.
+Since the LGA of Shoalhaven is in New South Wales, we will need to check the box labelled New South Wales under the "Threatened" list.
 
 .. figure:: images/AL_1.png
     :scale: 65
@@ -157,15 +138,10 @@ New South Wales uder the "Threatened" list.
 Other important filters to consider
 ----------------------------------------
 
-There are some filters which are of interest and/or important, but did 
-not fit into the previous four tabs.  These are: the basis of record, 
-whether or not a species is present or absent, and applying data profiles 
-to your data.  If you want more information, you can hover over X and some 
-information will pop up.
+The "Other" tab contains options for additional filters, such as: basis of record, presence/absence of a species, and data profiles. Hovering your mouse over the `i` button will bring up additional information on these filters.   
 
-We will be ticking the "Present" button to ensure we only 
-get presences.  It is important to note that there is vastly more presence 
-data than absence data, so this step may not be required.
+In this example, we'll select the "Present" button to ensure we only 
+get records of presences. 
 
 .. figure:: images/Other_1.png
     :scale: 65
@@ -187,10 +163,10 @@ Required Fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are two required fields when downloading either a list of species 
-or species' locations: an email, as well as a reason.
+or species' locations: an email address and a reason for downloading these data.
 
 - **Email**:  This should be an email of yours that you have registered with the relevant Living Atlas.
-- **Reason**: This is to specify why you are downloading data from the specified Living Atlas.  Examples are "environmental assessment" and "specied modelling".  These reasons will change with each Living Atlas. 
+- **Reason**: This is to specify why you are downloading data from the chosen Living Atlas.  Examples are "environmental assessment" and "species modelling".  These reasons will change with each Living Atlas. 
 
 This is how it should look:
 
@@ -203,28 +179,19 @@ This is how it should look:
 Optional But Recommended: Checking Number of Occurrences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you have created a query, it is time to start downloading data!  Before getting 
-the occurrence records, it is often a good idea to check the number of occurrences your 
-query will be downloading.  This will help you determine how long the query will take 
-(1mil records will take longer than 1000 records, for example).  This is also a good 
-sanity check before running a query, so you can amend it before clicking the "Download 
-Occurrences" button.
+After you have created a query, it is time to start downloading data!  Before downloading the occurrence records, it is often a good idea to check the number of occurrences your in your download. This will help you understand how long the download will take (e.g. 1 million records will take longer than 1,000 records).  This is also a good way to get a sense of whether you're about to download a reasonable number of records, given the parameters of your query. 
 
-To do this, click the "Check Number of Occurrences" button.  A box will pop up like this 
-with the number of counts:
+To do this, click the "Check Number of Occurrences" button.  A box will pop up like this with the number of counts:
 
 .. figure:: images/Counts_1.png
     :align: center
 
 |
 
-We know now that we are expecting about 4000 records.  Now we can download the occurrences.
-
 Download Occurrences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now it is finally time to download the occurrence records from the ALA.  To do this, simply 
-click the "Download Occurrences" button in the lower left-hand corner:
+Now that we know we're expecting about 4,000 records, we can download the data. To do this, click the "Download Occurrences" button in the lower left corner:
 
 .. figure:: images/Occurrences_1.png
     :scale: 65
@@ -232,9 +199,8 @@ click the "Download Occurrences" button in the lower left-hand corner:
 
 |
 
-After a bit, navigate to the main QGIS window.  Once the plugin is done downloading the 
-occurrences, you will see a new layer titled "data" with all your other spatial layers.  
-Your data should look like this below:
+Now navigate back to the main QGIS window. Once the plugin has downloaded the 
+occurrences, you will see a new layer titled "data" with all your other spatial layers. Your data should look like this:
 
 .. figure:: images/Occurrences_2.png
     :scale: 65
@@ -244,4 +210,4 @@ Your data should look like this below:
 
 |
 
-[1] https://threatenedspecies.bionet.nsw.gov.au/profile?id=10562
+[1] https://birdlife.org.au/bird-profiles/powerful-owl/
