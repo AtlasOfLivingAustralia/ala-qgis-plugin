@@ -88,14 +88,27 @@ pygments_style = "sphinx"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "renku"
+html_theme = "shibuya"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    # "body_max_width": None,
-    "body_min_width": "1200px",
+    "page_layout": "default",
+    "accent_color": "red", # defined in custom.css
+    "nav_links": [
+        {
+            "title": "Download Plugin",
+            "url": "https://plugins.qgis.org/plugins/quail/"
+        },
+        {
+            "title": "Authors",
+            "url": "authors"
+        },
+    ],
+    "github_url": "https://github.com/AtlasOfLivingAustralia/quail",  # replace with your actual repo URL
+    "nav_socials": ["github"],
+    "og_image_url": "_static/logo.png",
 }
 
 # was image_light
@@ -110,9 +123,11 @@ html_static_path = ["_static"]
 
 html_logo = "_static/logo/logo.png"
 
-html_favicon = '_static/logo/favicon.ico'
+html_favicon = '_static/logo/logo.png'
 
-# html_css_files = ['css/extra.css','css/style.css']
+html_css_files = [
+    'custom.css',
+]
 
 # html_style = 'css/style.css'
 

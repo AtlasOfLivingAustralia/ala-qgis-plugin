@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('_extensions/quarto-ext/fontawesome/assets/css/all.css');
+
+
+:root {
+  --sy-f-heading: "Roboto", sans-serif;
+  --sy-f-text: "Roboto", sans-serif;
+  --sy-f-mono: "Fira Mono", monospace;
+  --yue-c-link-1: #465f94;      /* link colour */
+  --yue-c-link-2: #952329;      /* link colour hover*/
+  --sy-c-link-hover: #465f94;   /* navbar link colour hover*/
+  
+}
+html.light {
+
+  --sy-c-surface: #dddc9a;      /* navbar link bg hover */
+}
+html.dark {
+  --sy-c-surface: #abb969;      /* navbar link bg hover */
+}
+
+html[data-accent-color='red'] {
+  --accent-9: #465f94;
+}
+
+a {
+  text-decoration: none!important;
+}
