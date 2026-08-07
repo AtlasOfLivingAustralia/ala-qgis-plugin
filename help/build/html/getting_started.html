@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="red" data-content_root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Getting Started - Quail 1.0.0 documentation</title><link rel="shortcut icon" href="_static/favicon.ico"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Deep Dives" href="deep_dives/index.html" /><link rel="prev" title="Installation" href="installation.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=ad592e98" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3f121e1e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Getting Started"/>
+  <meta property="og:image" content="_static/logo.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="index.html">
+      <img class="light-logo" src="_static/logo.png" alt="Quail" height="28" loading="lazy" />
+      <img class="dark-logo" src="_static/logo.png" alt="Quail" height="28" loading="lazy" />
+      <strong>Quail</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"><ul><li class="link">
+          <a href="https://plugins.qgis.org/plugins/quail/">
+            <span>Download Plugin</span></a>
+        </li><li class="link"><a href="authors.html">Authors</a></li></ul></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials">
+  <a href="https://github.com/AtlasOfLivingAustralia/quail" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a><a href="https://ala.org.au/" aria-label="Atlas of Living Australia">
+    <img src="../../images/favicon.ico" alt="Atlas of Living Australia" style="height: 1.2em; width: auto;">
+  </a>
+</div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deep_dives/index.html">Deep Dives</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#taxonomy">Taxonomy</a></li>
+<li><a class="reference internal" href="#date">Date</a></li>
+<li><a class="reference internal" href="#filtering-by-spatial-layers">Filtering By Spatial Layers</a></li>
+<li><a class="reference internal" href="#filtering-by-authoritative-lists">Filtering by Authoritative Lists</a></li>
+<li><a class="reference internal" href="#other-important-filters-to-consider">Other important filters to consider</a></li>
+<li><a class="reference internal" href="#downloading-data">Downloading data</a><ul>
+<li><a class="reference internal" href="#required-fields">Required Fields</a></li>
+<li><a class="reference internal" href="#optional-but-recommended-checking-number-of-occurrences">Optional But Recommended: Checking Number of Occurrences</a></li>
+<li><a class="reference internal" href="#download-occurrences">Download Occurrences</a></li>
+</ul>
+</li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">Quail</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Getting Started</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You will need to register your email address at the living atlas you
+want to download data from, otherwise you will get no data!</p>
+</div>
+<p>Now that you have successfully installed Quail, we’ll provide a quick
+introduction on building a query to get data. If you’re looking for a
+discussion on more specialised topics, the Deep Dives tab collates all
+vignettes on specialised topics. This tutorial serves as a quick start quide to get you acquainted with the plugin.</p>
+<p>We will work through the following example (this is specific to the
+Australian atlas, but can be adapted for others):</p>
+<div class="admonition-query admonition">
+<p class="admonition-title">Query</p>
+<p>“What threatened bird species are present in the Local
+Government Area of Shoalhaven in the year 2025?”</p>
+</div>
+<section id="taxonomy">
+<h2>Taxonomy<a class="headerlink" href="#taxonomy" title="Link to this heading">#</a></h2>
+<p>Here you can specify taxonomic names for the plugin to search.  Since
+we are going to be searching for birds in the class <em>Aves</em>, we can type this into the text box like so:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Aves_Text_box.png"><img alt="_images/Aves_Text_box.png" height="486" src="_images/Aves_Text_box.png" width="536" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The “Upload Species List” functionality is intended for larger lists and cases
+where specifying higher order taxonomy helps disambiguate species. For a more in-depth
+explanation of how to do this, see <a class="reference external" href="user_guide/taxonomy_advanced.html">Advanced Taxonomy</a>.</p>
+</div>
+<div class="admonition-part-of-query-solved admonition">
+<p class="admonition-title">Part of query solved</p>
+<p>“What threatened <strong>bird species</strong> are present in the Local Government Area of Shoalhaven in the year 2025?”</p>
+</div>
+</section>
+<section id="date">
+<h2>Date<a class="headerlink" href="#date" title="Link to this heading">#</a></h2>
+<p>Next we can specify the date range relevant to our query. On the “Date” tab, you will see two calendars:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Calendar_1.png"><img alt="_images/Calendar_1.png" height="488" src="_images/Calendar_1.png" width="535" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To choose the year 2025, we have to select 1 January 2025 for the start date and 31 December 2025 as the end date, like so:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Calendar_2.png"><img alt="_images/Calendar_2.png" height="488" src="_images/Calendar_2.png" width="536" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition-part-of-query-solved admonition">
+<p class="admonition-title">Part of query solved</p>
+<p>“What threatened <strong>bird species</strong> are present in the
+Local Government Area of Shoalhaven <strong>in the year 2025</strong>?”</p>
+</div>
+</section>
+<section id="filtering-by-spatial-layers">
+<h2>Filtering By Spatial Layers<a class="headerlink" href="#filtering-by-spatial-layers" title="Link to this heading">#</a></h2>
+<p>Quail lets users filter using spatial objects uploaded to QGIS. You can do this by selecting the “Spatial” tab and clicking “Update Layers in Plugin.”</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Spatial_1.png"><img alt="_images/Spatial_1.png" height="486" src="_images/Spatial_1.png" width="536" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Once this is done, a pop up appears that shows all the available layers and fields that can be used to select the later. In this example, we will use LGA_NAME25 to load the names of all the LGAs into the plugin.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Spatial_2.png"><img alt="_images/Spatial_2.png" height="486" src="_images/Spatial_2.png" width="535" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Spatial_3.png"><img alt="_images/Spatial_3.png" height="487" src="_images/Spatial_3.png" width="537" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Spatial_4.png"><img alt="_images/Spatial_4.png" height="485" src="_images/Spatial_4.png" width="536" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now that all the layer attributes have been loaded into the plugin, select “Shoalhaven” from the names of the LGAs.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Spatial_5.png"><img alt="_images/Spatial_5.png" height="488" src="_images/Spatial_5.png" width="537" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition-part-of-query-solved admonition">
+<p class="admonition-title">Part of query solved</p>
+<p>“What threatened <strong>bird species</strong> are present
+<strong>in the Local Government Area of Shoalhaven in the year 2025</strong>?”</p>
+</div>
+</section>
+<section id="filtering-by-authoritative-lists">
+<h2>Filtering by Authoritative Lists<a class="headerlink" href="#filtering-by-authoritative-lists" title="Link to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is only currently implemented for the Australian atlas.
+<a class="reference external" href="mailto:support&#37;&#52;&#48;ala&#46;org&#46;au">Contact us</a> if you would like
+authoritative lists added for your atlas.</p>
+</div>
+<p>The Atlas of Living Australia (ALA) maintains a number of authoritative lists which document the status of certain taxa at the federal and state/territory levels. These lists allow us to inform users of threatened, migratory, or non-native status of taxa, as well as obfuscate records for taxa that are considered “sensitive”. An example of a sensitive species is the Powerful Owl (<em>Ninox strenua</em>), which has seen habitat loss due to residential and agricultural development[1].</p>
+<p>When you click on an authoritative list tick box, your query will return only results that are on that particular list. If you are interested in multiple lists, tick the relevant boxes and your resulting query will include species on all those lists.</p>
+<p>Since the LGA of Shoalhaven is in New South Wales, we will need to check the box labelled New South Wales under the “Threatened” list.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/AL_1.png"><img alt="_images/AL_1.png" height="487" src="_images/AL_1.png" width="535" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition-part-of-query-solved admonition">
+<p class="admonition-title">Part of query solved</p>
+<p>“<strong>What threatened bird species</strong> are present <strong>in
+the Local Government Area of Shoalhaven in the year 2025</strong>?”</p>
+</div>
+</section>
+<section id="other-important-filters-to-consider">
+<h2>Other important filters to consider<a class="headerlink" href="#other-important-filters-to-consider" title="Link to this heading">#</a></h2>
+<p>The “Other” tab contains options for additional filters, such as: basis of record, presence/absence of a species, and data profiles. Hovering your mouse over the <cite>i</cite> button will bring up additional information on these filters.</p>
+<p>In this example, we’ll select the “Present” button to ensure we only
+get records of presences.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Other_1.png"><img alt="_images/Other_1.png" height="488" src="_images/Other_1.png" width="537" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition-part-of-query-solved admonition">
+<p class="admonition-title">Part of query solved</p>
+<p>“<strong>What threatened bird species are present in
+the Local Government Area of Shoalhaven in the year 2025</strong>?”</p>
+</div>
+<p>Now, it is time to download the data!</p>
+</section>
+<section id="downloading-data">
+<h2>Downloading data<a class="headerlink" href="#downloading-data" title="Link to this heading">#</a></h2>
+<section id="required-fields">
+<h3>Required Fields<a class="headerlink" href="#required-fields" title="Link to this heading">#</a></h3>
+<p>There are two required fields when downloading either a list of species
+or species’ locations: an email address and a reason for downloading these data.</p>
+<ul class="simple">
+<li><p><strong>Email</strong>:  This should be an email of yours that you have registered with the relevant Living Atlas.</p></li>
+<li><p><strong>Reason</strong>: This is to specify why you are downloading data from the chosen Living Atlas.  Examples are “environmental assessment” and “species modelling”.  These reasons will change with each Living Atlas.</p></li>
+</ul>
+<p>This is how it should look:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Required_Fields.png"><img alt="_images/Required_Fields.png" height="487" src="_images/Required_Fields.png" width="535" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="optional-but-recommended-checking-number-of-occurrences">
+<h3>Optional But Recommended: Checking Number of Occurrences<a class="headerlink" href="#optional-but-recommended-checking-number-of-occurrences" title="Link to this heading">#</a></h3>
+<p>After you have created a query, it is time to start downloading data!  Before downloading the occurrence records, it is often a good idea to check the number of occurrences your in your download. This will help you understand how long the download will take (e.g. 1 million records will take longer than 1,000 records).  This is also a good way to get a sense of whether you’re about to download a reasonable number of records, given the parameters of your query.</p>
+<p>To do this, click the “Check Number of Occurrences” button.  A box will pop up like this with the number of counts:</p>
+<figure class="align-center">
+<img alt="_images/Counts_1.png" src="_images/Counts_1.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="download-occurrences">
+<h3>Download Occurrences<a class="headerlink" href="#download-occurrences" title="Link to this heading">#</a></h3>
+<p>Now that we know we’re expecting about 4,000 records, we can download the data. To do this, click the “Download Occurrences” button in the lower left corner:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Occurrences_1.png"><img alt="_images/Occurrences_1.png" height="486" src="_images/Occurrences_1.png" width="537" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now navigate back to the main QGIS window. Once the plugin has downloaded the
+occurrences, you will see a new layer titled “data” with all your other spatial layers. Your data should look like this:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/Occurrences_2.png"><img alt="_images/Occurrences_2.png" height="647" src="_images/Occurrences_2.png" width="1028" />
+</a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>[1] <a class="reference external" href="https://birdlife.org.au/bird-profiles/powerful-owl/">https://birdlife.org.au/bird-profiles/powerful-owl/</a></p>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="installation.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Installation</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="deep_dives/index.html">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Deep Dives</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2026, Atlas of Living Australia</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/AtlasOfLivingAustralia/quail" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script src="_static/shibuya.js?v=50760d75"></script></body>
+</html>

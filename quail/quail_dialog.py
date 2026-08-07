@@ -13,6 +13,7 @@ from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor, QTextCharFormat
 from qgis.PyQt.QtWidgets import QCheckBox, QComboBox, QDialog, QLabel, QMessageBox, QPushButton
 from qgis.utils import iface
+import pyarrow
 
 from .vocab import (
     attributes_dict,
@@ -27,6 +28,9 @@ from .vocab import (
     sensitiveLists,
     taxon_selections,
     threatenedLists,
+    ATLAS_DICT,
+    PROFILES_DICT,
+    REASONS_DICT,
 )
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
@@ -157,7 +161,12 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
      *****************/
     """
     # get all atlases available
-    atlases = galah.show_all(atlases=True)
+    pyarrow_list = dir(pyarrow)
+    if "compute" in pyarrow_list:
+        if "match_substring_regex" in dir(pyarrow.compute):
+            atlases = galah.show_all(atlases=True)
+    else:
+        atlases = pd.DataFrame(ATLAS_DICT)
 
     # initialise atlas names dict
     atlasNames = {}
@@ -240,11 +249,21 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
         self.dataProfileComboBox.clear()
 
         # get data profiles
-        try:
-            profiles = galah.show_all(profiles=True)
-        except ValueError as e:
-            self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
-            return None
+        pyarrow_list = dir(pyarrow)
+        if "compute" in pyarrow_list:
+            if "match_substring_regex" in dir(pyarrow.compute):
+                try:
+                    profiles = galah.show_all(profiles=True)
+                except ValueError as e:
+                    self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
+                    return None
+        else:
+            atlas = self.atlasNames[self.atlasesComboBox.currentText()]
+            if atlas == "ALA":
+                profiles = pd.DataFrame(PROFILES_DICT)
+            else:
+                self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
+                return None
 
         # add data profile values to dict
         for i, row in profiles.iterrows():
@@ -266,12 +285,21 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
         # clear values
         self.reasonsComboBox.clear()
 
-        # get reasons available in atlas
-        try:
-            rs = galah.show_all(reasons=True)
-        except ValueError as e:
-            self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
-            return None
+        pyarrow_list = dir(pyarrow)
+        if "compute" in pyarrow_list:
+            if "match_substring_regex" in dir(pyarrow.compute):
+                try:
+                    rs = galah.show_all(reasons=True)
+                except ValueError as e:
+                    self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
+                    return None
+        else:
+            atlas = self.atlasNames[self.atlasesComboBox.currentText()]
+            if REASONS_DICT[atlas] != None:
+                profiles = pd.DataFrame(REASONS_DICT[atlas])
+            else:
+                self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
+                return None
 
         # add reasons to dict
         for i, row in rs.iterrows():
@@ -1422,7 +1450,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # add any spatial queries
         spatial = self.parse_spatial()
-        
+
         # set fields
         fields = self.set_data_fields()
 
@@ -1435,7 +1463,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
         taxonomy, filters, spatial, doi, fields, use_data_profile = self.prepare_query(counts=True)
 
         # check to see if crs is valid
-        if isinstance(spatial,str):
+        if isinstance(spatial, str):
             self.show_info_messagebox(text=spatial)
             return None
 
@@ -1559,7 +1587,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
             return None
 
         # check to see if crs is valid
-        if isinstance(spatial,str):
+        if isinstance(spatial, str):
             self.show_info_messagebox(text=spatial)
             return None
 
