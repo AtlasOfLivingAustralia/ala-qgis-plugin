@@ -259,7 +259,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
                     return None
         else:
             atlas = self.atlasNames[self.atlasesComboBox.currentText()]
-            if atlas == "ALA":
+            if atlas == "Australia":
                 profiles = pd.DataFrame(PROFILES_DICT)
             else:
                 self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
