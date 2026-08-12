@@ -3,7 +3,7 @@ name=Quail
 qgisMinimumVersion=3.0
 qgisMaximumVersion=4.99
 description=A plugin designed to get biodiversity data from a number of Living Atlases into QGIS
-version=1.0
+version=1.0.1
 author=Amanda Buyan, Atlas of Living Australia
 email=support@ala.org.au
 
