@@ -1,6 +1,6 @@
 [general]
 name=Quail
-qgisMinimumVersion=3.0
+qgisMinimumVersion=4.0
 qgisMaximumVersion=4.99
 description=A plugin designed to get biodiversity data from a number of Living Atlases into QGIS
 version=1.0.1
