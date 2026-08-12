@@ -1,3 +1,16 @@
+## 1.0.1 (2026-08-12)
+
+### Fix
+
+- **quail_dialog.py**: fixed speices list rendering, updated galah-python version, added exception for version that don't have pyarrow.compute
+- **fixed-name-of-Australian-atlas**: fixed name of australian atlas
+- **quail_dialog.py-and-help**: changed theme for help; added check in quail_dialog to make sure that users who don't have pyarrow installed with matching regex option still get options
+- **logo,-species-list,-reqs**: made sure logo is showing, species list is able to download, and requirements are up to date
+
+### Refactor
+
+- **moving-files-around-for-release**: moving files around for release
+
 ## 1.0.0 (2026-06-26)
 
 ### Feat

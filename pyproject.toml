@@ -3,8 +3,7 @@ line-length = 120
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-tag_format = "1.0.0"
-version = "1.0.0"
+version = "1.0.1"
 update_changelog_on_bump = true
 version_files = [
     "pyproject.toml:version",
@@ -13,7 +12,7 @@ version_files = [
 
 [project]
 name = "quail"
-version = "1.0.0"
+version = "1.0.1"
 requires-python = ">=3.14"
 dependencies = [
     "black>=26.5.1",
