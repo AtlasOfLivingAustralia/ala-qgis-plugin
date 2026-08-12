@@ -1,11 +1,12 @@
+import json
 import os
+import webbrowser
 from datetime import datetime
 
-import json
 import galah
 import geopandas as gpd
 import pandas as pd
-import webbrowser
+import pyarrow
 from qgis.core import QgsFeature, QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer
 from qgis.gui import QgsCheckableComboBox
 from qgis.PyQt import QtCore, QtWidgets, uic
@@ -13,9 +14,11 @@ from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor, QTextCharFormat
 from qgis.PyQt.QtWidgets import QCheckBox, QComboBox, QDialog, QLabel, QMessageBox, QPushButton
 from qgis.utils import iface
-import pyarrow
 
 from .vocab import (
+    ATLAS_DICT,
+    PROFILES_DICT,
+    REASONS_DICT,
     attributes_dict,
     bor_dict,
     eventdate_dict,
@@ -28,9 +31,6 @@ from .vocab import (
     sensitiveLists,
     taxon_selections,
     threatenedLists,
-    ATLAS_DICT,
-    PROFILES_DICT,
-    REASONS_DICT,
 )
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
@@ -165,6 +165,8 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
     if "compute" in pyarrow_list:
         if "match_substring_regex" in dir(pyarrow.compute):
             atlases = galah.show_all(atlases=True)
+        else:
+            atlases = pd.DataFrame(ATLAS_DICT)
     else:
         atlases = pd.DataFrame(ATLAS_DICT)
 
@@ -257,6 +259,13 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
                 except ValueError as e:
                     self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
                     return None
+            else:
+                atlas = self.atlasNames[self.atlasesComboBox.currentText()]
+                if atlas == "Australia":
+                    profiles = pd.DataFrame(PROFILES_DICT)
+                else:
+                    self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
+                    return None
         else:
             atlas = self.atlasNames[self.atlasesComboBox.currentText()]
             if atlas == "Australia":
@@ -293,10 +302,17 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
                 except ValueError as e:
                     self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
                     return None
+            else:
+                atlas = self.atlasNames[self.atlasesComboBox.currentText()]
+                if REASONS_DICT[atlas] != None:
+                    rs = pd.DataFrame(REASONS_DICT[atlas])
+                else:
+                    self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
+                    return None
         else:
             atlas = self.atlasNames[self.atlasesComboBox.currentText()]
             if REASONS_DICT[atlas] != None:
-                profiles = pd.DataFrame(REASONS_DICT[atlas])
+                rs = pd.DataFrame(REASONS_DICT[atlas])
             else:
                 self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
                 return None

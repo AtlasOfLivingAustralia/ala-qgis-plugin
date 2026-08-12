@@ -73,16 +73,10 @@ html_theme = "shibuya"
 # documentation.
 html_theme_options = {
     "page_layout": "default",
-    "accent_color": "red", # defined in custom.css
+    "accent_color": "red",  # defined in custom.css
     "nav_links": [
-        {
-            "title": "Download Plugin",
-            "url": "https://plugins.qgis.org/plugins/quail/"
-        },
-        {
-            "title": "Authors",
-            "url": "authors"
-        },
+        {"title": "Download Plugin", "url": "https://plugins.qgis.org/plugins/quail/"},
+        {"title": "Authors", "url": "authors"},
     ],
     "github_url": "https://github.com/AtlasOfLivingAustralia/quail",
     "nav_socials": ["github"],
@@ -104,7 +98,7 @@ html_logo = "_static/logo/logo.png"
 html_favicon = "_static/logo/favicon.ico"
 
 html_css_files = [
-    'custom.css',
+    "custom.css",
 ]
 
 # Output file base name for HTML help builder.

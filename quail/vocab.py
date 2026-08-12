@@ -327,7 +327,7 @@ default_reasons = {
 }
 
 REASONS_DICT = {
-    "ALA": default_reasons,
+    "Australia": default_reasons,
     "Austria": default_reasons,
     "Brazil": None,
     "Flanders": None,
