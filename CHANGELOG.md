@@ -1,3 +1,9 @@
+## 1.0.2 (2026-08-21)
+
+### Fix
+
+- **quail_dialog.py**: fixed an error where if a numeric identifier would identify a shape file, it was not being chosen
+
 ## 1.0.1 (2026-08-12)
 
 ### Fix
