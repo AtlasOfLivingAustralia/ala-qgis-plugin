@@ -29,7 +29,6 @@ from qgis.PyQt.QtWidgets import QAction
 
 # Import the code for the dialog
 from .quail_dialog import QuailDialog
-
 # Import the icon from resources.py
 from .resources import *
 

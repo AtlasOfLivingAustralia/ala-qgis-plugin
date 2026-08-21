@@ -6,32 +6,20 @@ from datetime import datetime
 import galah
 import geopandas as gpd
 import pandas as pd
-import pyarrow
-from qgis.core import QgsFeature, QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer
+from qgis.core import (QgsFeature, QgsField, QgsGeometry, QgsPointXY,
+                       QgsProject, QgsVectorLayer)
 from qgis.gui import QgsCheckableComboBox
 from qgis.PyQt import QtCore, QtWidgets, uic
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor, QTextCharFormat
-from qgis.PyQt.QtWidgets import QCheckBox, QComboBox, QDialog, QLabel, QMessageBox, QPushButton
+from qgis.PyQt.QtWidgets import (QCheckBox, QComboBox, QDialog, QLabel,
+                                 QMessageBox, QPushButton)
 from qgis.utils import iface
 
-from .vocab import (
-    ATLAS_DICT,
-    PROFILES_DICT,
-    REASONS_DICT,
-    attributes_dict,
-    bor_dict,
-    eventdate_dict,
-    latitude_dict,
-    longitude_dict,
-    migratoryLists,
-    nonNativeLists,
-    occ_fields,
-    occstatus_dict,
-    sensitiveLists,
-    taxon_selections,
-    threatenedLists,
-)
+from .vocab import (ATLAS_DICT, PROFILES_DICT, REASONS_DICT, attributes_dict,
+                    bor_dict, eventdate_dict, latitude_dict, longitude_dict,
+                    migratoryLists, nonNativeLists, occ_fields, occstatus_dict,
+                    sensitiveLists, taxon_selections, threatenedLists)
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), "quail_dialog_base.ui"))
@@ -161,14 +149,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
      *****************/
     """
     # get all atlases available
-    pyarrow_list = dir(pyarrow)
-    if "compute" in pyarrow_list:
-        if "match_substring_regex" in dir(pyarrow.compute):
-            atlases = galah.show_all(atlases=True)
-        else:
-            atlases = pd.DataFrame(ATLAS_DICT)
-    else:
-        atlases = pd.DataFrame(ATLAS_DICT)
+    atlases = galah.show_all(atlases=True)
 
     # initialise atlas names dict
     atlasNames = {}
@@ -251,28 +232,11 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
         self.dataProfileComboBox.clear()
 
         # get data profiles
-        pyarrow_list = dir(pyarrow)
-        if "compute" in pyarrow_list:
-            if "match_substring_regex" in dir(pyarrow.compute):
-                try:
-                    profiles = galah.show_all(profiles=True)
-                except ValueError as e:
-                    self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
-                    return None
-            else:
-                atlas = self.atlasNames[self.atlasesComboBox.currentText()]
-                if atlas == "Australia":
-                    profiles = pd.DataFrame(PROFILES_DICT)
-                else:
-                    self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
-                    return None
-        else:
-            atlas = self.atlasNames[self.atlasesComboBox.currentText()]
-            if atlas == "Australia":
-                profiles = pd.DataFrame(PROFILES_DICT)
-            else:
-                self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
-                return None
+        try:
+            profiles = galah.show_all(profiles=True)
+        except ValueError as e:
+            self.dataProfileComboBox.addItems(sorted(list(dataProfiles.keys())))
+            return None
 
         # add data profile values to dict
         for i, row in profiles.iterrows():
@@ -294,28 +258,12 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
         # clear values
         self.reasonsComboBox.clear()
 
-        pyarrow_list = dir(pyarrow)
-        if "compute" in pyarrow_list:
-            if "match_substring_regex" in dir(pyarrow.compute):
-                try:
-                    rs = galah.show_all(reasons=True)
-                except ValueError as e:
-                    self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
-                    return None
-            else:
-                atlas = self.atlasNames[self.atlasesComboBox.currentText()]
-                if REASONS_DICT[atlas] != None:
-                    rs = pd.DataFrame(REASONS_DICT[atlas])
-                else:
-                    self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
-                    return None
-        else:
-            atlas = self.atlasNames[self.atlasesComboBox.currentText()]
-            if REASONS_DICT[atlas] != None:
-                rs = pd.DataFrame(REASONS_DICT[atlas])
-            else:
-                self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
-                return None
+        # get all reasons from atlas
+        try:
+            rs = galah.show_all(reasons=True)
+        except ValueError as e:
+            self.reasonsComboBox.addItems(sorted(list(reasons.keys())))
+            return None
 
         # add reasons to dict
         for i, row in rs.iterrows():
@@ -960,7 +908,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
             if crs not in ["WGS 84"]:
                 return f"The Coordinate Reference System is {crs}, and should be WGS 84.  Please convert the CRS using QGIS."
             features = list(nl.getFeatures())
-            selected_features = [f for f in features if f.attributeMap()[attribute] in selected_shapes]
+            selected_features = [f for f in features if str(f.attributeMap()[attribute]) in selected_shapes]
             geometries = [f.geometry() for f in selected_features]
             geom_list += geometries
 
