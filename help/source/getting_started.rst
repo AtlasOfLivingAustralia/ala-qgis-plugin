@@ -188,10 +188,10 @@ To do this, click the "Check Number of Occurrences" button.  A box will pop up l
 
 |
 
-Download Occurrences
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Importing Occurrence Data Into QGIS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we know we're expecting about 4,000 records, we can download the data. To do this, click the "Download Occurrences" button in the lower left corner:
+Now that we know we're expecting about 4,000 records, we can download the data. To do this, click the "Import Occurrence Records" button in the lower left corner:
 
 .. figure:: images/Occurrences_1.png
     :scale: 65
