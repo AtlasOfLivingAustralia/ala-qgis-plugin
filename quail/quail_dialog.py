@@ -1557,7 +1557,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # make bounding boxes
         bboxes_for_querying = self.draw_bounding_box(shapes=spatial)
-
+        
         # set up total counts in case there are multiple shapes
         total_counts = 0
 
@@ -1587,7 +1587,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # check number of records the user will download; throw an error if there are
         # more than 5mil records to download
-        if int(counts["totalRecords"][0]) > 5000000 or total_counts > 505000:
+        if int(counts["totalRecords"][0]) > 5000000 or total_counts > 5050000:
 
             # set the text for the message box
             text = "You cannot download more than 5 million records at a time.  You have tried to download {} records.  Please filter your query further.".format(
