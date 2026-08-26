@@ -1,3 +1,9 @@
+## 1.0.3 (2026-08-27)
+
+### Fix
+
+- **quail_dialog.py**: increased the amount of records you can download (typo)
+
 ## 1.0.2 (2026-08-21)
 
 ### Fix
