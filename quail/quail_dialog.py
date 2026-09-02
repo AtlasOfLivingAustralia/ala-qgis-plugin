@@ -16,7 +16,7 @@ from qgis.PyQt.QtWidgets import (QCheckBox, QComboBox, QDialog, QLabel,
                                  QMessageBox, QPushButton)
 from qgis.utils import iface
 
-from .vocab import (ATLAS_DICT, PROFILES_DICT, REASONS_DICT, attributes_dict,
+from .vocab import (attributes_dict,
                     bor_dict, eventdate_dict, latitude_dict, longitude_dict,
                     migratoryLists, nonNativeLists, occ_fields, occstatus_dict,
                     sensitiveLists, taxon_selections, threatenedLists)
