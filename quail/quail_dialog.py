@@ -6,20 +6,28 @@ from datetime import datetime
 import galah
 import geopandas as gpd
 import pandas as pd
-from qgis.core import (QgsFeature, QgsField, QgsGeometry, QgsPointXY,
-                       QgsProject, QgsVectorLayer)
+from qgis.core import QgsFeature, QgsField, QgsGeometry, QgsPointXY, QgsProject, QgsVectorLayer
 from qgis.gui import QgsCheckableComboBox
 from qgis.PyQt import QtCore, QtWidgets, uic
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor, QTextCharFormat
-from qgis.PyQt.QtWidgets import (QCheckBox, QComboBox, QDialog, QLabel,
-                                 QMessageBox, QPushButton)
+from qgis.PyQt.QtWidgets import QCheckBox, QComboBox, QDialog, QLabel, QMessageBox, QPushButton
 from qgis.utils import iface
 
-from .vocab import (attributes_dict,
-                    bor_dict, eventdate_dict, latitude_dict, longitude_dict,
-                    migratoryLists, nonNativeLists, occ_fields, occstatus_dict,
-                    sensitiveLists, taxon_selections, threatenedLists)
+from .vocab import (
+    attributes_dict,
+    bor_dict,
+    eventdate_dict,
+    latitude_dict,
+    longitude_dict,
+    migratoryLists,
+    nonNativeLists,
+    occ_fields,
+    occstatus_dict,
+    sensitiveLists,
+    taxon_selections,
+    threatenedLists,
+)
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), "quail_dialog_base.ui"))
@@ -1557,7 +1565,7 @@ class QuailDialog(QtWidgets.QDialog, FORM_CLASS):
 
         # make bounding boxes
         bboxes_for_querying = self.draw_bounding_box(shapes=spatial)
-        
+
         # set up total counts in case there are multiple shapes
         total_counts = 0
 
