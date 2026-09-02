@@ -44,7 +44,7 @@
   <a href="https://github.com/AtlasOfLivingAustralia/quail" aria-label="GitHub">
     <iconify-icon icon="simple-icons:github"></iconify-icon>
   </a><a href="https://ala.org.au/" aria-label="Atlas of Living Australia">
-    <img src="source/images/favicon.ico" alt="Atlas of Living Australia" style="height: 1.2em; width: auto;">
+    <img src="../../source/images/favicon.ico" alt="Atlas of Living Australia" style="height: 1.2em; width: auto;">
   </a>
 </div></div>
     </div>
@@ -83,7 +83,8 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#installing-through-the-qgis-plugin-manager">Installing Through the QGIS Plugin Manager</a></li>
+<li><a class="reference internal" href="#step-1-install-qgis">Step 1: Install QGIS</a></li>
+<li><a class="reference internal" href="#step-1-install-quail-through-plugin-repository">Step 1: Install Quail Through Plugin Repository</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -116,9 +117,30 @@ data-aria-dark="Switch to auto color mode">
   <article class="yue" role="main">
           <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<p>Before installing the Quail plugin, you need to install QGIS. You can download the latest version of QGIS from <a class="reference external" href="https://qgis.org">qgis.org</a>.</p>
-<section id="installing-through-the-qgis-plugin-manager">
-<h2>Installing Through the QGIS Plugin Manager<a class="headerlink" href="#installing-through-the-qgis-plugin-manager" title="Link to this heading">#</a></h2>
+<section id="step-1-install-qgis">
+<h2>Step 1: Install QGIS<a class="headerlink" href="#step-1-install-qgis" title="Link to this heading">#</a></h2>
+<p>Before installing the Quail plugin, you need to install QGIS. Download
+the latest version of QGIS from <a class="reference external" href="https://qgis.org">qgis.org</a>. For Windows
+useres we strongly recommend using the Online (OSGeo4W) installer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Must use QGIS version 4.0 or higher</p>
+<p>Quail has already migrated to the future long-term release (LTR) version
+4+, <a class="reference external" href="https://blog.qgis.org/2025/10/07/update-on-qgis-4-0-release-schedule-and-ltr-plans/">scheduled to be released in October 2026</a>.
+We recommend that you update your QGIs version, as loading Quail in QGIS versions
+older than 4.0 will return the following error:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/QGIS3-error.jpg"><img alt="_images/QGIS3-error.jpg" height="356" src="_images/QGIS3-error.jpg" width="569" />
+</a>
+</figure>
+</div>
+</section>
+<section id="step-1-install-quail-through-plugin-repository">
+<h2>Step 1: Install Quail Through Plugin Repository<a class="headerlink" href="#step-1-install-quail-through-plugin-repository" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the images here are shown for a Mac, but this installation is the same process irrespective of your operating system.</p>
+</div>
 <p>In QGIS, navigate to the Plugins menu, and click on “Manage and Install Plugins”.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Manage_Install.png"><img alt="_images/Manage_Install.png" height="66" src="_images/Manage_Install.png" width="185" />
@@ -130,7 +152,7 @@ data-aria-dark="Switch to auto color mode">
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Go to the “All” tab, which looks like this:</p>
+<p>Go to the “All” tab:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Search_All.png"><img alt="_images/Search_All.png" height="503" src="_images/Search_All.png" width="577" />
 </a>
@@ -141,7 +163,7 @@ data-aria-dark="Switch to auto color mode">
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Search for “Quail” and it will come up in the menu like this:</p>
+<p>Search for “Quail”:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Search_Quail.png"><img alt="_images/Search_Quail.png" height="503" src="_images/Search_Quail.png" width="578" />
 </a>
@@ -166,7 +188,7 @@ Install this to make managing Quail easier in the future.</p>
 <div class="line"><br /></div>
 </div>
 <p>Now, QPIP will direct you to install <cite>galah-python</cite>, the main Python package
-that Quail uses to download data.</p>
+that Quail uses to download data.  Click “OK” to install.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/Install_galah_python.png"><img alt="_images/Install_galah_python.png" height="274" src="_images/Install_galah_python.png" width="506" />
 </a>
@@ -177,18 +199,7 @@ that Quail uses to download data.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>You will see a popup like this while everything is installing:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="_images/Installing_Reqs.png"><img alt="_images/Installing_Reqs.png" height="61" src="_images/Installing_Reqs.png" width="131" />
-</a>
-</figure>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p>The Quail plugin is installed!  Click on the Quail logo on your toolbar.</p>
+<p>The Quail plugin is installed!  Click on the Quail logo on your toolbar to start using Quail.</p>
 </section>
 </section>
 
