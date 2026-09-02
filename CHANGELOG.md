@@ -1,3 +1,10 @@
+## 1.0.4 (2026-09-02)
+
+### Fix
+
+- **removed-an-extraneous-infobox**: removed an extraneous infobox
+- **metadata.txt**: updated version number
+
 ## 1.0.3 (2026-08-27)
 
 ### Fix
