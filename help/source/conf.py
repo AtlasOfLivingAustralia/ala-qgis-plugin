@@ -80,7 +80,7 @@ html_theme_options = {
     ],
     "github_url": "https://github.com/AtlasOfLivingAustralia/quail",
     "nav_socials": ["github"],
-    "og_image_url": "_static/logo.png",
+    "og_image_url": "_static/logo/logo.png",
 }
 
 # was image_light
